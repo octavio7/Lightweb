@@ -105,7 +105,7 @@
               <a class="nav-link" href="#">Features</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+             <router-link to="/about">About</router-link>
             </li>
             <li class="nav-item">
               <a
