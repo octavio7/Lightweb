@@ -100,29 +100,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav dropdown">
             <li class="nav-item" v-on:click="navBarCollapse">
-              <router-link to="/" class="nav-link aria-current">Inicio</router-link>
-            </li>
-            <li class="nav-item" v-on:click="navBarCollapse">
-             <router-link to="/Servicios" class="nav-link">Servicios</router-link>
-            </li>
-            <li class="nav-item" v-on:click="navBarCollapse">
-             <router-link to="/about" class="nav-link">Nosotros</router-link>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
+              <router-link to="/" class="nav-link aria-current"
+                >Inicio</router-link
               >
+            </li>
+            <li class="nav-item" v-on:click="navBarCollapse">
+              <router-link to="/Servicios" class="nav-link"
+                >Servicios</router-link
+              >
+            </li>
+            <li class="nav-item" v-on:click="navBarCollapse">
+              <router-link to="/about" class="nav-link">Nosotros</router-link>
+            </li>
+            <li class="nav-item"></li>
+            <li class="nav-item" v-on:click="navBarCollapse">
+              <router-link to="/contacto" class="nav-link">Contacto</router-link>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="d-flex align-items-center altura">
-    <router-view />
+      <router-view />
     </div>
     <footer class="footer mt-auto py-3 align-self-end">
       <div class="container">
@@ -135,7 +134,7 @@
 </template>
 <script>
 import Particles from "@/components/Particles.vue"; // @ is an alias to /src
-  
+
 export default {
   components: {
     Particles,
@@ -145,14 +144,16 @@ export default {
       copyright: "\u00A9",
       marca: " LightWeb",
       currentDate: new Date(),
-      
-    };
+    }
   },
   methods: {
-    navBarCollapse: function(){
-      const boton = document.getElementById('boton');
+    navBarCollapse: function () {
+      const getClass = document.getElementById('boton');
+      if('navbar-toggler' == getClass.className){
+      const boton = document.getElementById("boton");
       boton.click();
-    }
+      }
+    },
   },
 };
 </script>
@@ -161,9 +162,10 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align:left;
+  text-align: left;
   color: #2c3e50;
   height: 100vh;
+  
 }
 
 #nav {
@@ -204,18 +206,20 @@ export default {
 a {
   color: honeydew !important;
 }
- .particlescss{
+.particlescss {
   position: absolute;
   width: 100%;
   height: 90%;
   z-index: -1;
 }
-.altura{
-  min-height:79%;
+.altura {
+  min-height: 79%;
 }
- h1, h3 {
-    color: royalblue;
-    font-family: 'Press Start 2P', cursive;
-    margin-bottom:1em;
+h1,
+h3 {
+  color: royalblue;
+  font-family: "Press Start 2P", cursive;
+  margin-bottom: 1em;
 }
+
 </style>

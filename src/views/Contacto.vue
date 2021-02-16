@@ -1,5 +1,5 @@
 <template>
-  <div class="about container">
+  <div class="container align-items-center col-md-4">
     <h1>Contactanos!</h1>
     <form>
       <div class="mb-3">
@@ -48,6 +48,9 @@
           rows="3"
         ></textarea>
       </div>
+      <div class="col-12">
+    <button class="btn btn-primary" type="submit">Enviar</button>
+  </div>
     </form>
   </div>
 </template>
@@ -55,4 +58,5 @@
 .blue {
   color: royalblue;
 }
+
 </style>
