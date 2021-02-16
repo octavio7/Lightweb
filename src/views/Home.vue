@@ -34,10 +34,6 @@ export default class Home extends Vue {}
  .home {
    z-index: 1;
  }
- h1 {
-    color: royalblue;
-    font-family: 'Press Start 2P', cursive;
-    margin-bottom:1em;
-}
+
 
 </style>

@@ -86,6 +86,7 @@
       <div class="container-fluid text-center">
         <a class="navbar-brand title" href="#">LightWeb</a>
         <button
+          id="boton"
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -97,15 +98,15 @@
           <span class="navbar-toggler-icon navbar-text"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <ul class="navbar-nav dropdown">
+            <li class="nav-item" v-on:click="navBarCollapse">
+              <router-link to="/" class="nav-link aria-current">Inicio</router-link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+            <li class="nav-item" v-on:click="navBarCollapse">
+             <router-link to="/Servicios" class="nav-link">Servicios</router-link>
             </li>
-            <li class="nav-item">
-             <router-link to="/about">About</router-link>
+            <li class="nav-item" v-on:click="navBarCollapse">
+             <router-link to="/about" class="nav-link">Nosotros</router-link>
             </li>
             <li class="nav-item">
               <a
@@ -144,7 +145,14 @@ export default {
       copyright: "\u00A9",
       marca: " LightWeb",
       currentDate: new Date(),
+      
     };
+  },
+  methods: {
+    navBarCollapse: function(){
+      const boton = document.getElementById('boton');
+      boton.click();
+    }
   },
 };
 </script>
@@ -204,5 +212,10 @@ a {
 }
 .altura{
   min-height:79%;
+}
+ h1, h3 {
+    color: royalblue;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom:1em;
 }
 </style>
